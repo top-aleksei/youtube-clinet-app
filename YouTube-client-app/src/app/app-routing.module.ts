@@ -7,4 +7,5 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
+// eslint-disable-next-line import/prefer-default-export
 export class AppRoutingModule {}
