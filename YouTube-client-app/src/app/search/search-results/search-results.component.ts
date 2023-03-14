@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
+// eslint-disable-next-line import/prefer-default-export
 export class SearchResultsComponent {}

@@ -32,7 +32,10 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        // TEMP/REMOVE!
+        "import/prefer-default-export": "off",
+        "no-console": "off"
       }
     },
     {
