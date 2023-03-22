@@ -1,3 +1,5 @@
+@import "../../shared/styles/constants.scss";
+
 :host {
   height: 24px;
   width: 100%;
@@ -27,11 +29,12 @@
     border: none;
     height: 100%;
     padding: 5px 22px;
-    box-shadow: 2px 0px 4px #2f80ed;
     vertical-align: top;
+    box-shadow: 2px 0px 4px #2f80ed;
+    transition: $transition;
+    cursor: pointer;
     &:hover {
       box-shadow: none;
     }
-    // filter: drop-shadow(2px 0px 4px #2F80ED);
   }
 }

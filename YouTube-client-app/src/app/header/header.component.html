@@ -5,13 +5,14 @@
         <img class="logo" alt="logoX" src="../../assets/logo.svg" />
         <app-header-form></app-header-form>
         <img
-          class="settins-btn"
+          class="settings-btn"
           alt="setting"
           src="../../assets/settings-btn.svg"
+          (click)="showSettings()"
         />
       </div>
       <app-login-info></app-login-info>
     </div>
-    <app-sorting-filters></app-sorting-filters>
+    <app-sorting-filters *ngIf="isSettingsOpen"></app-sorting-filters>
   </div>
 </header>
