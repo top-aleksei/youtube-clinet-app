@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { SearchResponse } from '../search-response.model';
+import data from '../../shared/response.json';
 
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-// eslint-disable-next-line import/prefer-default-export
-export class SearchResultsComponent {}
+export class SearchResultsComponent {
+  data: SearchResponse = data;
+}
