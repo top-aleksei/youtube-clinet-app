@@ -1,7 +1,12 @@
 <div class="wrapper">
-  <mat-grid-list class="layout" cols="4" rowHeight="327">
-    <mat-grid-tile class="layout__card" *ngFor="let item of data.items">
-      <app-search-item [item]="item"></app-search-item>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="layout">
+    <app-search-item
+      *ngFor="
+        let item of data.items
+          | sorting : sortingOptions
+          | wordfilter : sortingOptions
+      "
+      [item]="item"
+    ></app-search-item>
+  </div>
 </div>

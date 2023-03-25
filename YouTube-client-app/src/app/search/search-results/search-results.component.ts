@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { SearchResponse } from '../search-response.model';
+import { Component, Input } from '@angular/core';
+import { SortingOptions } from '../../models/sorting-filters.model';
+import { SearchResponse } from '../../models/search-response.model';
 import data from '../../shared/response.json';
 
 @Component({
@@ -8,5 +9,6 @@ import data from '../../shared/response.json';
   styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent {
+  @Input() sortingOptions!: SortingOptions;
   data: SearchResponse = data;
 }

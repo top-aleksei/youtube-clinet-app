@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { StartSearch } from '../models/start-search.model';
+import { SortingOptions } from '../models/sorting-filters.model';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @Output() sortingEvent = new EventEmitter<SortingOptions>();
+  @Output() startSearchEmit = new EventEmitter<StartSearch>();
   isSettingsOpen: boolean = false;
 
   showSettings() {
     this.isSettingsOpen = !this.isSettingsOpen;
+  }
+
+  onSorting(event: SortingOptions) {
+    this.sortingEvent.emit(event);
+  }
+
+  onStartSearch(event: StartSearch) {
+    this.startSearchEmit.emit(event);
   }
 }
