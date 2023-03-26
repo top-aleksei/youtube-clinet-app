@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,9 +34,7 @@ import { DateInfoDirective } from './directives/date-info.directive';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
     MatCardModule,
-    MatIconModule,
     FormsModule,
   ],
   providers: [],
