@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SortingOptions } from './models/sorting-filters.model';
-import { StartSearch } from './models/start-search.model';
+import { SortingOptions } from './shared/models/sorting-filters.model';
+import { StartSearch } from './shared/models/start-search.model';
 
 @Component({
   selector: 'app-root',

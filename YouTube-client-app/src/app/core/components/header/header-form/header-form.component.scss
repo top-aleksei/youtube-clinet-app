@@ -1,0 +1,40 @@
+@import "../../../../shared/styles/base.scss";
+
+:host {
+  height: 24px;
+  width: 100%;
+  max-width: 480px;
+}
+.form {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  &__input {
+    height: 100%;
+    max-width: 396px;
+    width: 90%;
+    background-color: rgba(239, 239, 239, 1);
+    padding: 5px 5px 3px 5px;
+    border: none;
+    outline: none;
+  }
+  &__button {
+    background-color: #2f80ed;
+    border-radius: 0px 4px 4px 0px;
+    color: #fff;
+    border: none;
+    height: 100%;
+    padding: 5px 22px;
+    vertical-align: top;
+    box-shadow: 2px 0px 4px #2f80ed;
+    @extend %transition;
+    cursor: pointer;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
