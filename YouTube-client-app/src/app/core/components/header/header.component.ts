@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SortingOptions } from '../../../shared/models/sorting-filters.model';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +7,6 @@ import { SortingOptions } from '../../../shared/models/sorting-filters.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Output() sortingEvent = new EventEmitter<SortingOptions>();
-
   constructor(private router: Router) {}
 
   isSettingsOpen: boolean = false;

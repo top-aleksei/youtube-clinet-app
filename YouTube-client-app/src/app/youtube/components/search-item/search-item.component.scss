@@ -1,3 +1,5 @@
+@import "../../../shared/styles/base.scss";
+
 .example-card {
   width: 262px;
   padding: 18px 18px 0 18px;
@@ -19,18 +21,10 @@
   &__title {
     margin-top: 12px;
     text-align: right;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
+    @include font(20px, 23px, 700);
     color: #4f4f4f;
   }
   &__button {
-    border: 0;
-    background-color: #2f80ed;
-    color: white;
-    border-radius: 5px;
     width: 120px;
     height: 32px;
     margin: 0 auto;

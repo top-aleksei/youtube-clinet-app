@@ -3,7 +3,6 @@
     class="form__input"
     placeholder="What are you want to find out"
     [(ngModel)]="searchParams.inputValue"
-    [ngModelOptions]="{ standalone: true }"
-  />
-  <button class="form__button" (click)="search()">search</button>
+    [ngModelOptions]="{ standalone: true }" />
+  <button class="form__button button" (click)="search()">search</button>
 </form>

@@ -6,7 +6,7 @@
       <img src="{{ item.snippet.thumbnails.medium.url }}" alt="" />
     </div>
 
-    <div class="details__info">
+    <div appDateInfo class="details__info" [item]="item">
       <div class="details__header">
         <h2 class="details__title">{{ item.snippet.title }}</h2>
         <span>{{ item.snippet.publishedAt | date }}</span>

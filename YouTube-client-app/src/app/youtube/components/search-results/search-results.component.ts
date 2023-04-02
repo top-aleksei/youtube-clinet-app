@@ -14,5 +14,6 @@ export class SearchResultsComponent {
     protected dataService: SearchService,
     protected sortService: SortOptionsService,
   ) {}
+
   data: SearchResponse = this.dataService.data;
 }

@@ -1,17 +1,17 @@
-export interface SearchItem {
+export interface ISearchItem {
   kind: string;
   etag: string;
   id: string;
-  snippet: Snippet;
-  statistics: SearchStatistics;
+  snippet: ISnippet;
+  statistics: ISearchStatistics;
 }
 
-export interface Snippet {
+export interface ISnippet {
   publishedAt: string;
   channelId: string;
   title: string;
   description: string;
-  thumbnails: Thumbnails;
+  thumbnails: IThumbnails;
   channelTitle: string;
   tags: string[];
   categoryId: string;
@@ -22,21 +22,21 @@ export interface Snippet {
   };
   defaultAudioLanguage: string;
 }
-export interface Thumbnails {
-  default: ThumbnailItem;
-  medium: ThumbnailItem;
-  high: ThumbnailItem;
-  standard: ThumbnailItem;
-  maxres: ThumbnailItem;
+export interface IThumbnails {
+  default: IThumbnailItem;
+  medium: IThumbnailItem;
+  high: IThumbnailItem;
+  standard: IThumbnailItem;
+  maxres: IThumbnailItem;
 }
 
-export interface ThumbnailItem {
+export interface IThumbnailItem {
   url: string;
   width: number;
   height: number;
 }
 
-export interface SearchStatistics {
+export interface ISearchStatistics {
   viewCount: string;
   likeCount: string;
   dislikeCount: string;

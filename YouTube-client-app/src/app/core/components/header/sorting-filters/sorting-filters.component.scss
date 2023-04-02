@@ -1,15 +1,13 @@
+@import "../../../../shared/styles/base.scss";
+
 .sort {
   display: flex;
   justify-content: center;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  @include font(12px, 14px, 400);
   margin-top: 34px;
   padding-bottom: 18px;
   &__title {
-    color: rgba(146, 146, 146, 1);
+    color: rgb(146, 146, 146);
   }
   &__options {
     margin-left: 11px;
@@ -17,7 +15,7 @@
     gap: 21px;
   }
   &__option {
-    color: rgba(47, 128, 237, 1);
+    color: rgb(47, 128, 237);
     &_underline {
       text-decoration: underline;
       cursor: pointer;
@@ -28,9 +26,9 @@
     gap: 10px;
   }
   &__input {
-    border: none;
-    outline: none;
     height: 13px;
     max-width: 150px;
+    border: none;
+    outline: none;
   }
 }

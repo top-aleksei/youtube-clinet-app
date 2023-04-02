@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchItem } from 'src/app/shared/models/search-item.model';
+import { ISearchItem } from 'src/app/shared/models/search-item.model';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { SearchService } from '../../services/search.service';
   templateUrl: './details-page.component.html',
   styleUrls: ['./details-page.component.scss'],
 })
-export class DetailsPageComponent {
+export class DetailsPageComponent implements OnInit {
   id!: string;
-  item: SearchItem | undefined;
+  item: ISearchItem | undefined;
   constructor(
     private activateRout: ActivatedRoute,
     private searchService: SearchService,

@@ -1,4 +1,4 @@
-export interface SortingOptions {
+export interface ISortingOptions {
   byDate: boolean;
   byViews: boolean;
   reverseDate: boolean;

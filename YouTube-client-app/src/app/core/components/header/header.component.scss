@@ -1,12 +1,9 @@
 @import "../../../shared/styles/base.scss";
 
 .header {
-  background-color: rgba(229, 229, 229, 1);
+  background-color: $color-primary;
   width: 100%;
   min-height: 80px;
-  &__wrapper {
-    // display: flex;
-  }
   &__bar {
     display: flex;
     width: 100%;
@@ -18,7 +15,7 @@
     gap: 10px;
     width: 100%;
     margin-top: 15px;
-    margin-left: 130px;
+    padding-left: 15%;
   }
   .logo {
     width: 50px;
@@ -29,11 +26,6 @@
     width: 24px;
     height: 24px;
     border-radius: 5px;
-    box-shadow: 2px 0px 4px #2f80ed;
-    @extend %transition;
-    cursor: pointer;
-    &:hover {
-      box-shadow: none;
-    }
+    padding: 0;
   }
 }

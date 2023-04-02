@@ -1,4 +1,4 @@
-export interface StartSearch {
+export interface IStartSearch {
   startSearch: boolean;
   inputValue: string;
 }

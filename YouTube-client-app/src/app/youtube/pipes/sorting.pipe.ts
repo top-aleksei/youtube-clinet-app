@@ -1,12 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchItem } from '../../shared/models/search-item.model';
-import { SortingOptions } from '../../shared/models/sorting-filters.model';
+import { ISearchItem } from '../../shared/models/search-item.model';
+import { ISortingOptions } from '../../shared/models/sorting-filters.model';
 
 @Pipe({
   name: 'sorting',
 })
 export class SortingPipe implements PipeTransform {
-  transform(items: SearchItem[], sortingOptions: SortingOptions): SearchItem[] {
+  transform(
+    items: ISearchItem[],
+    sortingOptions: ISortingOptions,
+  ): ISearchItem[] {
     console.log(sortingOptions);
     if (sortingOptions.byDate) {
       const res = items.sort(

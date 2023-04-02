@@ -8,11 +8,7 @@
 .form {
   height: 100%;
   width: 100%;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  @include font(12px, 14px, 400);
   &__input {
     height: 100%;
     max-width: 396px;
@@ -23,18 +19,9 @@
     outline: none;
   }
   &__button {
-    background-color: #2f80ed;
-    border-radius: 0px 4px 4px 0px;
-    color: #fff;
-    border: none;
     height: 100%;
     padding: 5px 22px;
+    border-radius: 0px 4px 4px 0px;
     vertical-align: top;
-    box-shadow: 2px 0px 4px #2f80ed;
-    @extend %transition;
-    cursor: pointer;
-    &:hover {
-      box-shadow: none;
-    }
   }
 }

@@ -1,6 +1,5 @@
-/* eslint-disable object-curly-newline */
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
-import { SearchItem } from '../../shared/models/search-item.model';
+import { ISearchItem } from '../../shared/models/search-item.model';
 
 const zeroDate = Date.parse('2000-01-01');
 const datePeriods = {
@@ -20,7 +19,7 @@ enum ColorPeriods {
   selector: '[appDateInfo]',
 })
 export class DateInfoDirective implements OnInit {
-  @Input() item!: SearchItem;
+  @Input() item!: ISearchItem;
   constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
   ngOnInit(): void {
     this.addColor();
