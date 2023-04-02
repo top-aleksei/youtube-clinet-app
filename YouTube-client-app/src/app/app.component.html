@@ -1,10 +1,8 @@
-<app-header
-  (sortingEvent)="sorting($event)"
-  (startSearchEmit)="startSearch($event)"
-></app-header>
+<app-header (sortingEvent)="sorting($event)"></app-header>
 <!-- <app-search-results
   *ngIf="searchParams.startSearch"
   [sortingOptions]="sortingOptions"
 ></app-search-results> -->
 
-<app-login-page></app-login-page>
+<!-- <app-login-page></app-login-page> -->
+<router-outlet></router-outlet>

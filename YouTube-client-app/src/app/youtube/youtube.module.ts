@@ -7,6 +7,10 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SortingPipe } from './pipes/sorting.pipe';
 import { WordfilterPipe } from './pipes/wordfilter.pipe';
 import { DateInfoDirective } from './directives/date-info.directive';
+import { YoutubeRoutingModule } from './youtube-routing.module';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import { ResultsPageComponent } from './pages/results-page/results-page.component';
+import { YoutubeComponent } from './youtube.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,10 @@ import { DateInfoDirective } from './directives/date-info.directive';
     SortingPipe,
     WordfilterPipe,
     DateInfoDirective,
+    DetailsPageComponent,
+    ResultsPageComponent,
+    YoutubeComponent,
   ],
-  imports: [CommonModule, MatCardModule],
-  exports: [SearchResultsComponent],
+  imports: [CommonModule, MatCardModule, YoutubeRoutingModule],
 })
 export class YoutubeModule {}

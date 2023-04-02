@@ -12,8 +12,8 @@
       <input
         type="text"
         class="sort__input"
-        [(ngModel)]="sortingOptions.word"
-        (input)="SortingEvent.emit(sortingOptions)"
+        [(ngModel)]="sortingService.sortingOptions.word"
+        (input)="sortingService.rewriteConfig()"
       />
     </div>
   </div>

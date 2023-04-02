@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { SortingOptions } from 'src/app/shared/models/sorting-filters.model';
+import { Component } from '@angular/core';
+import { SortOptionsService } from 'src/app/youtube/services/sort-options.service';
 
 @Component({
   selector: 'app-sorting-filters',
@@ -7,31 +7,13 @@ import { SortingOptions } from 'src/app/shared/models/sorting-filters.model';
   styleUrls: ['./sorting-filters.component.scss'],
 })
 export class SortingFiltersComponent {
-  @Output() SortingEvent = new EventEmitter<SortingOptions>();
-
-  sortingOptions = {
-    byDate: false,
-    byViews: false,
-    reverseDate: true,
-    reverseViews: true,
-    word: '',
-  };
+  constructor(protected sortingService: SortOptionsService) {}
 
   sortByDate() {
-    this.sortingOptions.byViews = false;
-    this.sortingOptions.reverseViews = true;
-    this.sortingOptions.reverseDate = !this.sortingOptions.reverseDate;
-    this.sortingOptions.byDate = true;
-
-    this.SortingEvent.emit(this.sortingOptions);
+    this.sortingService.sortByDate();
   }
 
   sortByViews() {
-    this.sortingOptions.byDate = false;
-    this.sortingOptions.reverseDate = true;
-    this.sortingOptions.reverseViews = !this.sortingOptions.reverseViews;
-    this.sortingOptions.byViews = true;
-
-    this.SortingEvent.emit(this.sortingOptions);
+    this.sortingService.sortByViews();
   }
 }

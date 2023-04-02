@@ -4,7 +4,6 @@ import { SortingOptions } from '../../shared/models/sorting-filters.model';
 
 @Pipe({
   name: 'sorting',
-  pure: false,
 })
 export class SortingPipe implements PipeTransform {
   transform(items: SearchItem[], sortingOptions: SortingOptions): SearchItem[] {

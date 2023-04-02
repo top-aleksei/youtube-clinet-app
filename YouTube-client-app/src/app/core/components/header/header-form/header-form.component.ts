@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { StartSearch } from 'src/app/shared/models/start-search.model';
+import { Component } from '@angular/core';
+
+import { SearchService } from 'src/app/youtube/services/search.service';
 
 @Component({
   selector: 'app-header-form',
@@ -7,14 +8,14 @@ import { StartSearch } from 'src/app/shared/models/start-search.model';
   styleUrls: ['./header-form.component.scss'],
 })
 export class HeaderFormComponent {
-  @Output() startSearchEmit = new EventEmitter<StartSearch>();
+  constructor(private dataService: SearchService) {}
+
   searchParams = {
     startSearch: false,
     inputValue: '',
   };
 
-  onClickSearch() {
-    this.searchParams.startSearch = true;
-    this.startSearchEmit.emit(this.searchParams);
+  search() {
+    this.dataService.isSearched = true;
   }
 }

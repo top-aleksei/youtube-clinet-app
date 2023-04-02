@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { StartSearch } from '../../../shared/models/start-search.model';
+import { Router } from '@angular/router';
 import { SortingOptions } from '../../../shared/models/sorting-filters.model';
 
 @Component({
@@ -9,18 +9,16 @@ import { SortingOptions } from '../../../shared/models/sorting-filters.model';
 })
 export class HeaderComponent {
   @Output() sortingEvent = new EventEmitter<SortingOptions>();
-  @Output() startSearchEmit = new EventEmitter<StartSearch>();
+
+  constructor(private router: Router) {}
+
   isSettingsOpen: boolean = false;
 
   showSettings() {
     this.isSettingsOpen = !this.isSettingsOpen;
   }
 
-  onSorting(event: SortingOptions) {
-    this.sortingEvent.emit(event);
-  }
-
-  onStartSearch(event: StartSearch) {
-    this.startSearchEmit.emit(event);
+  navigateToHome() {
+    this.router.navigate(['/']);
   }
 }

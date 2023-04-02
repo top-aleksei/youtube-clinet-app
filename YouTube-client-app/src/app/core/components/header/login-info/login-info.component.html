@@ -1,2 +1,8 @@
-<p class="login__name">{{ userName }}</p>
-<img src="assets/login.svg" alt="logIn" class="login__btn" />
+<p class="login__name">{{ authService.userName }}</p>
+<img
+  *ngIf="authService.userName"
+  src="assets/login.svg"
+  alt="logIn"
+  class="login__btn"
+  (click)="logOut()"
+/>

@@ -27,6 +27,8 @@
     <p class="card__title">{{ item.snippet.title }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button class="card__button" mat-button>more...</button>
+    <button class="card__button" mat-button routerLink="{{ item.id }}">
+      more...
+    </button>
   </mat-card-actions>
 </mat-card>
