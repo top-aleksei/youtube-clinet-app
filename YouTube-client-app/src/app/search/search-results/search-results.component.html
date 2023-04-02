@@ -1,1 +1,12 @@
-<p>search-results works!</p>
+<div class="wrapper">
+  <div class="layout">
+    <app-search-item
+      *ngFor="
+        let item of data.items
+          | sorting : sortingOptions
+          | wordfilter : sortingOptions
+      "
+      [item]="item"
+    ></app-search-item>
+  </div>
+</div>

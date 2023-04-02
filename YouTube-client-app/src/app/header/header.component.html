@@ -1,1 +1,23 @@
-<p>header works!</p>
+<header class="header">
+  <div class="wrapper header__wrapper">
+    <div class="header__bar">
+      <div class="header__search">
+        <img class="logo" alt="logoX" src="assets/logo.svg" />
+        <app-header-form
+          (startSearchEmit)="startSearchEmit.emit($event)"
+        ></app-header-form>
+        <img
+          class="settings-btn"
+          alt="setting"
+          src="assets/settings-btn.svg"
+          (click)="showSettings()"
+        />
+      </div>
+      <app-login-info></app-login-info>
+    </div>
+    <app-sorting-filters
+      *ngIf="isSettingsOpen"
+      (SortingEvent)="sortingEvent.emit($event)"
+    ></app-sorting-filters>
+  </div>
+</header>

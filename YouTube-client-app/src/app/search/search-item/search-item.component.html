@@ -1,1 +1,32 @@
-<p>search-item works!</p>
+<mat-card appDateInfo class="example-card" [item]="item">
+  <img
+    class="card__img"
+    mat-card-image
+    [src]="item.snippet.thumbnails.medium.url"
+    alt="Photo of a Shiba Inu"
+  />
+  <div class="stats">
+    <div class="stats__item">
+      <img src="assets/stats/viewed.svg" alt="viewed" />
+      <span>{{ item.statistics.viewCount }}</span>
+    </div>
+    <div class="stats__item">
+      <img src="assets/stats/likes.svg" alt="likes" />
+      <span>{{ item.statistics.likeCount }}</span>
+    </div>
+    <div class="stats__item">
+      <img src="assets/stats/dislikes.svg" alt="dislikes" />
+      <span>{{ item.statistics.dislikeCount }}</span>
+    </div>
+    <div class="stats__item">
+      <img src="assets/stats/comments.svg" alt="comments" />
+      <span>{{ item.statistics.commentCount }}</span>
+    </div>
+  </div>
+  <mat-card-content class="card__content">
+    <p class="card__title">{{ item.snippet.title }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="card__button" mat-button>more...</button>
+  </mat-card-actions>
+</mat-card>

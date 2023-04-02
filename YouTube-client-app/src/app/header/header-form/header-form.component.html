@@ -1,0 +1,9 @@
+<form class="form">
+  <input
+    class="form__input"
+    placeholder="What are you want to find out"
+    [(ngModel)]="searchParams.inputValue"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <button class="form__button" (click)="onClickSearch()">search</button>
+</form>
