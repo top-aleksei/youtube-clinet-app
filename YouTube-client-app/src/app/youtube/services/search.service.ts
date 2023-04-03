@@ -5,7 +5,7 @@ import data from '../../shared/response.json';
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {
+export default class SearchService {
   data: SearchResponse = data;
   isSearched = false;
 

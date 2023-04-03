@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
-  styleUrls: ['./youtube.component.scss']
+  styleUrls: ['./youtube.component.scss'],
 })
-export class YoutubeComponent {
-
-}
+export default class YoutubeComponent {}

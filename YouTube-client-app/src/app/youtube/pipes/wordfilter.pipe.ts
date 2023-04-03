@@ -5,7 +5,7 @@ import { ISortingOptions } from 'src/app/shared/models/sorting-filters.model';
 @Pipe({
   name: 'wordfilter',
 })
-export class WordfilterPipe implements PipeTransform {
+export default class WordfilterPipe implements PipeTransform {
   transform(
     items: ISearchItem[],
     sortingOptions: ISortingOptions,

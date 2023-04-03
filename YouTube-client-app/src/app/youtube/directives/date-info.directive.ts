@@ -1,26 +1,23 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { ISearchItem } from '../../shared/models/search-item.model';
+import ColorPeriods from './date-info.model';
 
 const zeroDate = Date.parse('2000-01-01');
+
 const datePeriods = {
   week: Date.parse('2000-01-08') - zeroDate,
   month: Date.parse('2000-02-01') - zeroDate,
   halfYear: Date.parse('2000-06-01') - zeroDate,
 };
 
-enum ColorPeriods {
-  lessWeek = 'blue',
-  moreWeek = 'green',
-  moreMonth = 'yellow',
-  moreHalfYear = 'red',
-}
-
 @Directive({
   selector: '[appDateInfo]',
 })
-export class DateInfoDirective implements OnInit {
+export default class DateInfoDirective implements OnInit {
   @Input() item!: ISearchItem;
+
   constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+
   ngOnInit(): void {
     this.addColor();
   }

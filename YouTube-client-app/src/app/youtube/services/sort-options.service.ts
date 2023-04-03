@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
+import sortOptions from 'src/app/shared/configs/sort-options.config';
+import { ISortingOptions } from 'src/app/shared/models/sorting-filters.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class SortOptionsService {
-  sortingOptions = {
-    byDate: false,
-    byViews: false,
-    reverseDate: true,
-    reverseViews: true,
-    word: '',
-  };
+export default class SortOptionsService {
+  sortingOptions: ISortingOptions = sortOptions;
 
   sortByDate() {
     this.sortingOptions.byViews = false;

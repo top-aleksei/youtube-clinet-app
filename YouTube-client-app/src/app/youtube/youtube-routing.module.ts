@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import SearchResultsComponent from './components/search-results/search-results.component';
+import DetailsPageComponent from './pages/details-page/details-page.component';
 
 const routes: Routes = [
   {
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class YoutubeRoutingModule {}
+export default class YoutubeRoutingModule {}

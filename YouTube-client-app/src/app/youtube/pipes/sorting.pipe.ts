@@ -5,12 +5,11 @@ import { ISortingOptions } from '../../shared/models/sorting-filters.model';
 @Pipe({
   name: 'sorting',
 })
-export class SortingPipe implements PipeTransform {
+export default class SortingPipe implements PipeTransform {
   transform(
     items: ISearchItem[],
     sortingOptions: ISortingOptions,
   ): ISearchItem[] {
-    console.log(sortingOptions);
     if (sortingOptions.byDate) {
       const res = items.sort(
         (a, b) =>

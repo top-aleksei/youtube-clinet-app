@@ -14,26 +14,31 @@
     border-top-left-radius: unset !important;
     border-top-right-radius: unset !important;
   }
+
   &__content {
     height: 82px;
     overflow: hidden;
   }
+
   &__title {
     margin-top: 12px;
     text-align: right;
     @include font(20px, 23px, 700);
     color: #4f4f4f;
   }
+
   &__button {
     width: 120px;
     height: 32px;
     margin: 0 auto;
   }
 }
+
 .stats {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+
   &__item {
     display: flex;
     gap: 2px;

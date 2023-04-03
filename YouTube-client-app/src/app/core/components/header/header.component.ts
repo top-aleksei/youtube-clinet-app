@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export default class HeaderComponent {
   constructor(private router: Router) {}
 
   isSettingsOpen: boolean = false;

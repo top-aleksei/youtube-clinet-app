@@ -1,11 +1,11 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from './local-storage.service';
+import LocalStorageService from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export default class AuthService {
   userName: string | null;
 
   constructor(private ls: LocalStorageService, private roter: Router) {

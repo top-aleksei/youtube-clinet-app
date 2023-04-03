@@ -6,6 +6,6 @@ import { ISearchItem } from '../../../shared/models/search-item.model';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss'],
 })
-export class SearchItemComponent {
+export default class SearchItemComponent {
   @Input() item!: ISearchItem;
 }
