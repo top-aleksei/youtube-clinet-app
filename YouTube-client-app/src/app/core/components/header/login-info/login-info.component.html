@@ -1,7 +1,14 @@
-<p class="login__name">{{ authService.userName }}</p>
-<img
-  *ngIf="authService.userName"
-  src="assets/login.svg"
-  alt="logIn"
-  class="login__btn button"
-  (click)="logOut()" />
+<div *ngIf="isLogged | async; else logOutBtn" class="login__wrapper">
+  <p class="login__name">{{ authService.userName$ | async }}</p>
+  <img
+    *ngIf="authService.isLogged$"
+    src="assets/login.svg"
+    alt="logIn"
+    class="login__ico button" />
+
+  <button class="login__button button" (click)="logOut()">log out</button>
+</div>
+
+<ng-template #logOutBtn>
+  <button class="login__button button">log in</button>
+</ng-template>

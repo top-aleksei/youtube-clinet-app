@@ -1,5 +1,6 @@
 import { SearchResponse } from 'src/app/shared/models/search-response.model';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import data from '../../shared/response.json';
 
 @Injectable({
@@ -8,6 +9,7 @@ import data from '../../shared/response.json';
 export default class SearchService {
   data: SearchResponse = data;
   isSearched = false;
+  searchValue$ = new BehaviorSubject('');
 
   getItemById(id: string) {
     return this.data.items.find((item) => item.id === id);

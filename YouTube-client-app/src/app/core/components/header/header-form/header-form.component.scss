@@ -3,7 +3,7 @@
 :host {
   height: 24px;
   width: 100%;
-  max-width: 480px;
+  max-width: 380px;
 }
 
 .form {
@@ -13,18 +13,10 @@
 
   &__input {
     height: 100%;
-    max-width: 396px;
-    width: 90%;
+    width: 100%;
     background-color: rgba(239, 239, 239, 1);
     padding: 5px 5px 3px 5px;
     border: none;
     outline: none;
-  }
-
-  &__button {
-    height: 100%;
-    padding: 5px 22px;
-    border-radius: 0px 4px 4px 0px;
-    vertical-align: top;
   }
 }

@@ -13,6 +13,8 @@ export default class LoginInfoComponent {
     private searchService: SearchService,
   ) {}
 
+  isLogged = this.authService.isLogged$;
+
   logOut() {
     this.authService.logOut();
     this.searchService.isSearched = false;
