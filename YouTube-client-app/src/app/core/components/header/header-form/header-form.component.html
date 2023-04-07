@@ -2,6 +2,7 @@
   <input
     class="form__input"
     placeholder="What are you want to find out"
-    (input)="onInput($event)" />
+    (input)="onInput($event)"
+    [value]="searchString$ | async" />
   <!-- <button class="form__button button" (click)="search()">search</button> -->
 </form>

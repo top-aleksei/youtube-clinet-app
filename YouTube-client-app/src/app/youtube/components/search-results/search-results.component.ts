@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { SearchResponse } from 'src/app/shared/models/search-response.model';
 import SortOptionsService from 'src/app/youtube/services/sort-options.service';
+import { ISearchItem } from 'src/app/shared/models/search-item.model';
 import SearchService from '../../services/search.service';
 
 @Component({
@@ -9,11 +9,16 @@ import SearchService from '../../services/search.service';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-export default class SearchResultsComponent {
+export default class SearchResultsComponent implements OnInit {
   constructor(
     protected dataService: SearchService,
     protected sortService: SortOptionsService,
   ) {}
+  items!: ISearchItem[];
 
-  data: SearchResponse = this.dataService.data;
+  ngOnInit(): void {
+    this.dataService.items$.subscribe((items) => {
+      this.items = items;
+    });
+  }
 }
