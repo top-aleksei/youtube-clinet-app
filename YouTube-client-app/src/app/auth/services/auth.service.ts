@@ -11,8 +11,6 @@ export default class AuthService {
   isLogged$ = this.userName$.pipe(map((el) => el !== null));
 
   constructor(private ls: LocalStorageService, private roter: Router) {
-    this.userName$.subscribe((val) => console.log('name', val));
-    this.isLogged$.subscribe((val) => console.log('isLogged', val));
     this.userName$.next(ls.getData('userName'));
   }
 
