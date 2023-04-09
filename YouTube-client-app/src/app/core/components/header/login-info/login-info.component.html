@@ -4,7 +4,8 @@
     *ngIf="authService.isLogged$"
     src="assets/login.svg"
     alt="logIn"
-    class="login__ico button" />
+    class="login__ico button"
+    (click)="routeToAdmin()" />
 
   <button class="login__button button" (click)="logOut()">log out</button>
 </div>

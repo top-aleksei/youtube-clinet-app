@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.default),
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then((m) => m.default),
+  },
+  {
     path: 'youtube',
     loadChildren: () =>
       import('./youtube/youtube.module').then((m) => m.default),

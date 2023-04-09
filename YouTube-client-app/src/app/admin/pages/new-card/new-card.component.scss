@@ -2,13 +2,14 @@
 
 p {
   @include font(10px, 10px, 400);
+  margin-bottom: 3px;
 }
 
 .popup {
   width: 350px;
   background-color: $color-gray-1;
   border-radius: 5px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 25px 20px;
   &__wrapper {
     display: flex;
@@ -41,7 +42,7 @@ p {
   }
   &__button {
     margin: 20px 0 0 auto;
-    width: 125px;
+    width: 160px;
   }
 }
 .errors {

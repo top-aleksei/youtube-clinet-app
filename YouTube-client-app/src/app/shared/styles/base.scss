@@ -20,4 +20,7 @@
   &:hover {
     box-shadow: none;
   }
+  &:disabled {
+    opacity: 0.3;
+  }
 }

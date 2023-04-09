@@ -1,0 +1,77 @@
+<div class="popup__wrapper wrapper">
+  <div class="popup">
+    <h2 class="popup__title">Create new card</h2>
+    <form class="popup__form" [formGroup]="newCardForm" (ngSubmit)="onSubmit()">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" />
+      <div
+        *ngIf="
+          newCardForm.controls['title'].invalid &&
+          newCardForm.controls['title'].touched
+        ">
+        <p *ngIf="newCardForm.controls['title'].hasError('required')">
+          Please enter a title
+        </p>
+        <p *ngIf="newCardForm.controls['title'].hasError('minlength')">
+          The title is too short
+        </p>
+        <p *ngIf="newCardForm.controls['title'].hasError('maxlength')">
+          The title is too long
+        </p>
+      </div>
+      <label for="discription">discription</label>
+      <input type="text" id="discription" formControlName="discription" />
+      <p *ngIf="newCardForm.controls['discription'].hasError('maxlength')">
+        The title is too long
+      </p>
+      <label for="imgUrl">Img</label>
+      <input type="text" id="imgUrl" formControlName="imgUrl" />
+      <div
+        *ngIf="
+          newCardForm.controls['imgUrl'].invalid &&
+          newCardForm.controls['imgUrl'].touched
+        ">
+        <p *ngIf="newCardForm.controls['imgUrl'].hasError('required')">
+          Please enter a link to the image
+        </p>
+        <p *ngIf="newCardForm.controls['imgUrl'].hasError('pattern')">
+          The image link is invalid
+        </p>
+      </div>
+      <label for="videoUrl">Link video</label>
+      <input type="text" id="videoUrl" formControlName="videoUrl" />
+      <div
+        *ngIf="
+          newCardForm.controls['videoUrl'].invalid &&
+          newCardForm.controls['videoUrl'].touched
+        ">
+        <p *ngIf="newCardForm.controls['videoUrl'].hasError('required')">
+          Please enter a link to the video
+        </p>
+        <p *ngIf="newCardForm.controls['videoUrl'].hasError('pattern')">
+          The video link is invalid
+        </p>
+      </div>
+      <label for="date">Creation date</label>
+      <input type="date" id="date" formControlName="date" />
+      <div
+        *ngIf="
+          newCardForm.controls['date'].invalid &&
+          newCardForm.controls['date'].touched
+        ">
+        <p *ngIf="newCardForm.controls['date'].hasError('required')">
+          Please enter a creation date
+        </p>
+        <p *ngIf="newCardForm.controls['date'].hasError('futureDate')">
+          The date is invalid (from future)
+        </p>
+      </div>
+      <button
+        class="popup__button button"
+        type="submit"
+        [disabled]="!newCardForm.valid">
+        Create card
+      </button>
+    </form>
+  </div>
+</div>

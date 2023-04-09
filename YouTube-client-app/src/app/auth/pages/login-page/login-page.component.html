@@ -1,19 +1,69 @@
 <div class="popup__wrapper wrapper">
   <div class="popup">
     <h2 class="popup__title">Login</h2>
-    <form class="popup__form">
-      <label>login</label>
+    <form class="popup__form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <label for="userName">login</label>
+      <input type="text" id="userName" formControlName="login" />
+      <div
+        *ngIf="
+          authForm.controls['login'].invalid &&
+          authForm.controls['login'].touched
+        ">
+        <p *ngIf="authForm.controls['login'].hasError('required')">
+          Please enter a login email
+        </p>
+        <p *ngIf="authForm.controls['login'].hasError('email')">
+          The login email is invalid
+        </p>
+      </div>
+      <label for="password">password</label>
       <input
         type="text"
-        [(ngModel)]="userName"
-        [ngModelOptions]="{ standalone: true }"
-      />
-      <label>password</label>
-      <input type="text" />
+        id="password"
+        formControlName="password"
+        (input)="temp()" />
+
+      <div
+        *ngIf="
+          authForm.controls['password'].invalid &&
+          authForm.controls['password'].touched
+        ">
+        <p
+          *ngIf="
+            authForm.controls['password'].hasError('required');
+            else passwordStrengthBlock
+          ">
+          Please enter a password
+        </p>
+      </div>
+
+      <ng-template #passwordStrengthBlock>
+        <div class="errors">
+          <p class="errors__title">Your password isn't strong enough</p>
+          <p *ngIf="authForm.controls['password'].hasError('minlength')">
+            -use at least 8 characters
+          </p>
+          <p *ngIf="authForm.controls['password'].hasError('useDifferentCase')">
+            -use letters with upper and lower case
+          </p>
+          <p
+            *ngIf="
+              authForm.controls['password'].hasError('useLettersAndNumbers')
+            ">
+            -use at least one letter and one number
+          </p>
+          <p *ngIf="authForm.controls['password'].hasError('useSpecialChar')">
+            -use at least one special char (!@#$%^&*()_+\-=[]};':"\|,.<>)
+          </p>
+        </div>
+      </ng-template>
+
+      <button
+        class="popup__button button"
+        type="submit"
+        [disabled]="!authForm.valid">
+        Login
+      </button>
     </form>
-    <div class="popup__buttons">
-      <a routerLink="/auth" class="popup__link">Registration</a>
-      <button class="popup__button button" (click)="onSubmit()">Login</button>
-    </div>
   </div>
 </div>
