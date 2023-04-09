@@ -18,6 +18,8 @@ export default class SearchService {
     switchMap((idsString) => this.getVideosById(idsString)),
   );
 
+  tempItems: ISearchItem[] | null = null;
+
   getVideosIds(searchWordValue: string) {
     return this.http
       .get<ISearchResponse>('search', {

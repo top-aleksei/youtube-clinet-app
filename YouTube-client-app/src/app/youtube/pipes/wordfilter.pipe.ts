@@ -10,11 +10,14 @@ export default class WordfilterPipe implements PipeTransform {
     items: ISearchItem[],
     sortingOptions: ISortingOptions,
   ): ISearchItem[] {
-    return items.filter(
-      (el) =>
-        el.snippet.title
-          .toLowerCase()
-          .indexOf(sortingOptions.word.toLowerCase()) !== -1,
-    );
+    if (items) {
+      return items.filter(
+        (el) =>
+          el.snippet.title
+            .toLowerCase()
+            .indexOf(sortingOptions.word.toLowerCase()) !== -1,
+      );
+    }
+    return items;
   }
 }
