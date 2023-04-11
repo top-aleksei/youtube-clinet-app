@@ -10,7 +10,6 @@ import WordfilterPipe from './pipes/wordfilter.pipe';
 import DateInfoDirective from './directives/date-info.directive';
 import YoutubeRoutingModule from './youtube-routing.module';
 import DetailsPageComponent from './pages/details-page/details-page.component';
-import ResultsPageComponent from './pages/results-page/results-page.component';
 import YoutubeComponent from './youtube.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import YoutubeComponent from './youtube.component';
     WordfilterPipe,
     DateInfoDirective,
     DetailsPageComponent,
-    ResultsPageComponent,
     YoutubeComponent,
   ],
   imports: [

@@ -3,18 +3,18 @@
 .sort {
   display: flex;
   justify-content: center;
-  @include font(12px, 14px, 400);
   margin-top: 34px;
   padding-bottom: 18px;
+  @include font(12px, 14px, 400);
 
   &__title {
     color: rgb(146, 146, 146);
   }
 
   &__options {
-    margin-left: 11px;
     display: flex;
     gap: 21px;
+    margin-left: 11px;
   }
 
   &__option {

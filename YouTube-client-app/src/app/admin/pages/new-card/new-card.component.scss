@@ -1,16 +1,16 @@
 @import "../../../shared/styles/base.scss";
 
 p {
-  @include font(10px, 10px, 400);
   margin-bottom: 3px;
+  @include font(10px, 10px, 400);
 }
 
 .popup {
   width: 350px;
-  background-color: $color-gray-1;
-  border-radius: 5px;
   margin-top: 50px;
   padding: 25px 20px;
+  border-radius: 5px;
+  background-color: $color-gray-1;
   &__wrapper {
     display: flex;
     justify-content: center;
@@ -20,18 +20,18 @@ p {
   }
   &__form {
     display: flex;
-    gap: 4px;
     flex-direction: column;
+    gap: 4px;
     > label {
-      color: $color-gray-2;
       @include font(10px, 15px, 400);
+      color: $color-gray-2;
     }
     > input {
+      height: 35px;
+      padding: 0 7px;
       background-color: $color-gray-3;
       border: none;
       outline: none;
-      height: 35px;
-      padding: 0 7px;
       &.ng-touched.ng-valid {
         border: 1px solid $color-green;
       }
@@ -41,8 +41,8 @@ p {
     }
   }
   &__button {
-    margin: 20px 0 0 auto;
     width: 160px;
+    margin: 20px 0 0 auto;
   }
 }
 .errors {

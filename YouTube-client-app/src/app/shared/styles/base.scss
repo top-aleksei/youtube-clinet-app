@@ -9,11 +9,11 @@
 }
 
 .button {
+  padding: 6px 30px;
   color: $color-white;
   background-color: $color-secondary;
-  border: none;
   border-radius: 5px;
-  padding: 6px 30px;
+  border: none;
   box-shadow: 2px 0px 4px #2f80ed;
   @extend %transition;
   cursor: pointer;
