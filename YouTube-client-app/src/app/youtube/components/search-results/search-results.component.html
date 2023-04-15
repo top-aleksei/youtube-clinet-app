@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="layout">
+  <div *ngIf="items$ | async; let items" class="layout">
     <app-search-item
       *ngFor="
         let item of items

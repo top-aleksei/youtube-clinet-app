@@ -1,11 +1,18 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
-        "project": ["tsconfig.(app|lib|spec).json", "tsconfig.json"]
+        "project": [
+          "tsconfig.(app|lib|spec).json",
+          "tsconfig.json"
+        ]
       },
       "extends": [
         "eslint:recommended",
@@ -16,7 +23,9 @@
         "airbnb-typescript/base",
         "prettier"
       ],
-      "plugins": ["import"],
+      "plugins": [
+        "import"
+      ],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -42,9 +51,21 @@
       }
     },
     {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended"
+      ]
     }
   ]
 }

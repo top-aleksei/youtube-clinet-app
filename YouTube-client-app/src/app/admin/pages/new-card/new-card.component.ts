@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { createNewCard } from 'src/app/redux/actions/youtube.action';
 import dateValidator from '../../utils/dateValidator';
 
 @Component({
@@ -14,7 +16,7 @@ class NewCardComponent {
       Validators.minLength(3),
       Validators.maxLength(20),
     ]),
-    discription: new FormControl('', [Validators.maxLength(13)]),
+    description: new FormControl('', [Validators.maxLength(13)]),
     imgUrl: new FormControl('', [
       Validators.required,
       Validators.pattern(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/),
@@ -29,10 +31,17 @@ class NewCardComponent {
     date: new FormControl('', [Validators.required, dateValidator]),
   });
 
+  constructor(private store: Store) {}
+
   onSubmit() {
     if (this.newCardForm.valid) {
-      alert('cool, data is valid');
-      this.newCardForm.reset();
+      // const card: ICustomItem = this.newCardForm.value
+      // alert('cool, data is valid');
+      // this.newCardForm.reset();
+      console.log(this.newCardForm.value);
+      this.store.dispatch(
+        createNewCard({ customItem: this.newCardForm.value }),
+      );
     }
   }
 }
