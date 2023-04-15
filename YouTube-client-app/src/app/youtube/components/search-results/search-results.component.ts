@@ -6,7 +6,6 @@ import { ISearchItem } from 'src/app/shared/models/search-item.model';
 import { Store } from '@ngrx/store';
 
 import { selectApiCards } from 'src/app/redux/selectors/youtube.selectors';
-import { IState } from 'src/app/redux/state.model';
 import SearchService from '../../services/search.service';
 
 @Component({
@@ -21,9 +20,8 @@ export default class SearchResultsComponent implements OnInit, OnDestroy {
   constructor(
     protected dataService: SearchService,
     protected sortService: SortOptionsService,
-    private store: Store<IState>,
+    private store: Store,
   ) {
-    // this.items$.subscribe((it) => console.log(it));
     this.items$ = store.select(selectApiCards);
   }
 

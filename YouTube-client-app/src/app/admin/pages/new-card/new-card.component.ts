@@ -35,13 +35,10 @@ class NewCardComponent {
 
   onSubmit() {
     if (this.newCardForm.valid) {
-      // const card: ICustomItem = this.newCardForm.value
-      // alert('cool, data is valid');
-      // this.newCardForm.reset();
-      console.log(this.newCardForm.value);
       this.store.dispatch(
         createNewCard({ customItem: this.newCardForm.value }),
       );
+      this.newCardForm.reset();
     }
   }
 }
