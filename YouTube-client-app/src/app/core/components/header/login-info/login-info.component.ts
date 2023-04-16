@@ -19,7 +19,6 @@ export default class LoginInfoComponent {
 
   logOut() {
     this.authService.logOut();
-    this.searchService.isSearched = false;
   }
 
   routeToAdmin() {

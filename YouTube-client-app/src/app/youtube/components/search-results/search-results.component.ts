@@ -6,6 +6,7 @@ import { ISearchItem } from 'src/app/shared/models/search-item.model';
 import { Store } from '@ngrx/store';
 
 import { selectApiCards } from 'src/app/redux/selectors/youtube.selectors';
+import { fetchCards } from 'src/app/redux/actions/youtube.action';
 import SearchService from '../../services/search.service';
 
 @Component({
@@ -26,7 +27,11 @@ export default class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.itemsSubscription = this.dataService.items$.subscribe();
+    this.itemsSubscription = this.dataService
+      .getAllVideos()
+      .subscribe((items) =>
+        this.store.dispatch(fetchCards({ apiItems: items })),
+      );
   }
 
   ngOnDestroy(): void {
