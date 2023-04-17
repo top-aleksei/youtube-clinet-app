@@ -1,6 +1,6 @@
 import { ISearchItem } from './search-item.model';
 
-export interface SearchResponse {
+export interface ISearchResponse {
   kind: string;
   etag: string;
   pageInfo: {
@@ -8,4 +8,6 @@ export interface SearchResponse {
     resultsPerPage: number;
   };
   items: ISearchItem[];
+  regionCode?: string;
+  nextPageToken?: string;
 }

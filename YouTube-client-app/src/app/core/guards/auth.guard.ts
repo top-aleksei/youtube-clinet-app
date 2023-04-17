@@ -6,12 +6,17 @@ import AuthService from '../../auth/services/auth.service';
   providedIn: 'root',
 })
 export default class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  private isAllowed!: boolean;
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.isLogged$.subscribe((el) => {
+      this.isAllowed = el;
+    });
+  }
 
   canActivate(): boolean {
-    if (this.authService.userName === null) {
+    if (!this.isAllowed) {
       this.router.navigate(['/auth']);
     }
-    return !!this.authService.userName;
+    return this.isAllowed;
   }
 }

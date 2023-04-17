@@ -1,12 +1,11 @@
-<div class="wrapper" *ngIf="dataService.isSearched">
+<div class="wrapper">
   <div class="layout">
     <app-search-item
       *ngFor="
-        let item of data.items
+        let item of items
           | sorting : sortService.sortingOptions
           | wordfilter : sortService.sortingOptions
       "
-      [item]="item"
-    ></app-search-item>
+      [item]="item"></app-search-item>
   </div>
 </div>

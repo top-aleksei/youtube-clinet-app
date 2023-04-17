@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ISearchItem } from 'src/app/shared/models/search-item.model';
+import { Subscription } from 'rxjs';
 import SearchService from '../../services/search.service';
 
 @Component({
@@ -8,9 +9,11 @@ import SearchService from '../../services/search.service';
   templateUrl: './details-page.component.html',
   styleUrls: ['./details-page.component.scss'],
 })
-export default class DetailsPageComponent implements OnInit {
+export default class DetailsPageComponent implements OnInit, OnDestroy {
   id!: string;
   item: ISearchItem | undefined;
+  itemSubscription!: Subscription;
+
   constructor(
     private activateRout: ActivatedRoute,
     private searchService: SearchService,
@@ -19,8 +22,16 @@ export default class DetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activateRout.snapshot.params['id'];
-    this.item = this.searchService.getItemById(this.id);
-    console.log(this.item);
+
+    this.itemSubscription = this.searchService
+      .getVideosById(this.id)
+      .subscribe((el) => {
+        [this.item] = el;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.itemSubscription.unsubscribe();
   }
 
   onBack() {

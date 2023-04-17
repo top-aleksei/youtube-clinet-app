@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 
+import { HttpClientModule } from '@angular/common/http';
 import SearchItemComponent from './components/search-item/search-item.component';
 import SearchResultsComponent from './components/search-results/search-results.component';
 import SortingPipe from './pipes/sorting.pipe';
@@ -23,6 +24,11 @@ import YoutubeComponent from './youtube.component';
     ResultsPageComponent,
     YoutubeComponent,
   ],
-  imports: [CommonModule, MatCardModule, YoutubeRoutingModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    YoutubeRoutingModule,
+    HttpClientModule,
+  ],
 })
 export default class YoutubeModule {}
