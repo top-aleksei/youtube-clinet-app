@@ -1,0 +1,39 @@
+<div class="details" *ngIf="item">
+  <div class="details__button button" (click)="onBack()"><</div>
+
+  <div class="details__block">
+    <div class="details__img">
+      <img src="{{ item.snippet.thumbnails.medium.url }}" alt="" />
+    </div>
+
+    <div appDateInfo class="details__info" [item]="item">
+      <div class="details__header">
+        <h2 class="details__title">{{ item.snippet.title }}</h2>
+        <span>{{ item.snippet.publishedAt | date }}</span>
+      </div>
+
+      <div class="details__description">
+        <h3>Description:</h3>
+        <p>{{ item.snippet.description }}</p>
+      </div>
+      <div class="stats">
+        <div class="stats__item">
+          <img src="assets/stats/viewed.svg" alt="viewed" />
+          <span>{{ item.statistics.viewCount }}</span>
+        </div>
+        <div class="stats__item">
+          <img src="assets/stats/likes.svg" alt="likes" />
+          <span>{{ item.statistics.likeCount }}</span>
+        </div>
+        <div class="stats__item">
+          <img src="assets/stats/dislikes.svg" alt="dislikes" />
+          <span>{{ item.statistics.dislikeCount }}</span>
+        </div>
+        <div class="stats__item">
+          <img src="assets/stats/comments.svg" alt="comments" />
+          <span>{{ item.statistics.commentCount }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

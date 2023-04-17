@@ -1,0 +1,12 @@
+<div class="wrapper" *ngIf="dataService.isSearched">
+  <div class="layout">
+    <app-search-item
+      *ngFor="
+        let item of data.items
+          | sorting : sortService.sortingOptions
+          | wordfilter : sortService.sortingOptions
+      "
+      [item]="item"
+    ></app-search-item>
+  </div>
+</div>

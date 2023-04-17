@@ -1,0 +1,40 @@
+@import "../../../../shared/styles/base.scss";
+
+.sort {
+  display: flex;
+  justify-content: center;
+  @include font(12px, 14px, 400);
+  margin-top: 34px;
+  padding-bottom: 18px;
+
+  &__title {
+    color: rgb(146, 146, 146);
+  }
+
+  &__options {
+    margin-left: 11px;
+    display: flex;
+    gap: 21px;
+  }
+
+  &__option {
+    color: rgb(47, 128, 237);
+
+    &_underline {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &__word {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__input {
+    height: 13px;
+    max-width: 150px;
+    border: none;
+    outline: none;
+  }
+}

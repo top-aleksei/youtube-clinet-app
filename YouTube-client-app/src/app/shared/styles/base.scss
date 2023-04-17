@@ -1,0 +1,23 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./placeholders.scss";
+
+.wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 150px;
+}
+
+.button {
+  color: $color-white;
+  background-color: $color-secondary;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 30px;
+  box-shadow: 2px 0px 4px #2f80ed;
+  @extend %transition;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+  }
+}

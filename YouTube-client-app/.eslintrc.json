@@ -13,7 +13,8 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "airbnb-base",
-        "airbnb-typescript/base"
+        "airbnb-typescript/base",
+        "prettier"
       ],
       "plugins": ["import"],
       "rules": {
@@ -35,8 +36,6 @@
         ],
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/lines-between-class-members": "off",
-        // TEMP/REMOVE!
-        "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
         "no-console": "off",
         "implicit-arrow-linebreak": "warn"

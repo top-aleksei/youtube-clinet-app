@@ -1,0 +1,15 @@
+@import "../../../shared/styles/base.scss";
+
+.error {
+  display: flex;
+  gap: 27px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+
+  > p {
+    width: 230px;
+    @include font(24px, 28px, 700);
+    color: $color-gray-2;
+  }
+}
